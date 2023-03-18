@@ -34,4 +34,4 @@ int main(void)
 		printf(" is %d and is 0\n", last);
 	}
 	return (0);
-}.
+}
