@@ -10,15 +10,15 @@
 
 int main(void)
 {
-	0-putchar('_');
-	0-putchar('p');
-	0-putchar('u');
-	0-putchar('t');
-	0-putchar('c');
-	0-putchar('h');
-	0-putchar('a');
-	0-putchar('r');
-	0-putchar('\n');
+	-putchar('_');
+	-putchar('p');
+	-putchar('u');
+	-putchar('t');
+	-putchar('c');
+	-putchar('h');
+	-putchar('a');
+	-putchar('r');
+	-putchar('\n');
 
 	return (0);
 }
