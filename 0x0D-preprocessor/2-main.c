@@ -1,7 +1,7 @@
 #include<stdio.h>
 /**
- * main to print - the name of current  file source
- * Return : 0 always 
+ * main - to print - the name of current  file source
+ * Return: Always 0.
  */
 int main(void)
 {
