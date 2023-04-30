@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
-* function that prints all the elements of a listint_t list by ahmed khalil
+* function that prints all the elements of a listint_t list
 * @h: head of the list
 *
 * Return: The NumberOFNodesber of nodes
