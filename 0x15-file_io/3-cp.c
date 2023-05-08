@@ -1,8 +1,6 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 /**
- * clos - close errors
+ * clos - close error
  * @fd: the file descriptor to print
  */
 void clos(int fd)
@@ -18,7 +16,7 @@ void clos(int fd)
  */
 int main(int ac, char **a)
 {
-	int fd1, fd2, rd = 1, wr, cls, cls2;
+	int fid1, fid2, rd1 = 1, wr1, cle, cle2;
 	char buf[1024];
 
 	if (ac != 3)
@@ -26,33 +24,33 @@ int main(int ac, char **a)
 		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", a[0]);
 		exit(97);
 	}
-	fd1 = open(a[1], O_RDONLY);
-	if (fd1 == -1)
+	fid1 = open(a[1], O_RDONLY);
+	if (fid1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", a[1]);
 		exit(98);
 	}
-	fd2 = open(a[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
-while (rd > 0)
+	fid2 = open(a[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
+while (rd1 > 0)
 {
-rd = read(fd1, buf, 1024);
-if (rd == -1)
+rd1 = read(fid1, buf, 1024);
+if (rd1 == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", a[1]);
 exit(98);
 }
-wr = write(fd2, buf, rd);
-if (wr == -1)
+wr1 = write(fid2, buf, rd1);
+if (wr1 == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", a[2]);
 exit(99);
 }
 }
-	cls = close(fd1);
-	if (cls == -1)
-		clos(fd1);
-	cls2 = close(fd2);
-	if (cls2 == -1)
-		clos(fd2);
-	return (wr);
+	cle = close(fid1);
+	if (cle == -1)
+		clos(fid1);
+	cle2 = close(fid2);
+	if (cle2 == -1)
+		clos(fid2);
+	return (wr1);
 }
