@@ -19,7 +19,7 @@ int _sqrt_recursion(int n)
  * SQRT - recursivly to get the natural
  * square root for  number
  * @n: number to get sqaure root
- * @ num: counter
+ * @num: counter begin with half of n
  *
  * Return:  result square root
  */
