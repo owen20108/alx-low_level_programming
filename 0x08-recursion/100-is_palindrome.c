@@ -17,8 +17,8 @@ int is_palindrome(char *s)
 }
 
 /**
- * _strng_lngth - return string length 
- * @s: string to return the length 
+ * _strng_lngth - return string length
+ * @s: string to return the length
  *
  * Return: length of the string
  */
@@ -32,7 +32,7 @@ int _strng_lngth(char *s)
 /**
  * test_plndrm - test character with recursion for palindrome
  * @s: string to test it
- * @num: counter 
+ * @num: counter
  * @lnght: length of the string
  *
  * Return: 1 if palindrome, 0 if not
