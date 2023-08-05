@@ -1,39 +1,45 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 
 /**
- * main - program add positive numbers.
- * @argc: int number of arguments
- * @argv: list array with the arguments
- *
- * Return: always 0
- **/
-
+ * main - add two numbers
+  * @argc:int
+  * @argv:array of string
+  * Return: sum of all numbers
+ */
 int main(int argc, char *argv[])
 {
-	int cuntr, sumn = 0, reslt = 0;
-	char ch[] = "Error", *find_symbol;
+	int cntr;
+	int sy;
+	int co;
+	int sumt;
+	char *ar;
 
-	if (argc > 1)
+	sum = 0;
+	co = 0;
+
+	cntr = 1;
+	while (cntr < argc)
 	{
-		for (cuntr = 1; cuntr < argc; cuntr++)
+		ar = argv[cntr];
+		sy = 0;
+		while (ar[sy] != '\0')
 		{
-			find_symbol = argv[cuntr];
-			while (*find_symbol != 0)
+			if (ar[sy] < '0' || ar[sy] > '9')
 			{
-				if (*find_symbol < 47 || *find_symbol > 57)
-				{
-					printf("%s\n", ch);
-					return (1);
-				}
-				find_symbol++;
+				printf("Error\n");
+				return (1);
 			}
-			reslt = atoi(argv[i]);
-			sumn += reslt;
+			sy++;
 		}
-		printf("%d\n", sumn);
+		cntr++;
 	}
-	else
-		printf("%d\n", 0);
+
+	for (cntr = 1; cntr < argc; cntr++)
+	{
+		co = atoi(argv[cntr]);
+		sumt = sumt + co;
+	}
+	printf("%d\n", sumt);
 	return (0);
 }
