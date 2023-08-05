@@ -4,35 +4,35 @@
 #include <string.h>
 
 /**
-  * main - Print the sum of args positive numbers
-  * @argc: int argument count
-  * @argv: list argument vector
+  * main - sum of args positive numbers
+  * @argc: argument count
+  * @argv: argument vector
   *
-  * Return:  zero
+  * Return: Always zero
   */
 int main(int argc, char *argv[])
 {
-	int cnt;
-	unsigned int q, suma = 0;
-	char *ary;
+	int o;
+	unsigned int l, suma = 0;
+	char *f;
 
 	if (argc > 1)
 	{
-		for (cnt = 1; cnt < argc; cnt++)
+		for (o = 1; o < argc; o++)
 		{
-			ary = argv[cnt];
+			f = argv[o];
 
-			for (q = 0; q < strlen(e); q++)
+			for (l = 0; l < strlen(f); l++)
 			{
-				if (ary[q] < 48 || ary[q] > 57)
+				if (f[l] < 48 || f[l] > 57)
 				{
 					printf("Error\n");
 					return (1);
 				}
 			}
 
-			suma += atoi(ary);
-			ary++;
+			suma += atoi(f);
+			f++;
 		}
 
 		printf("%d\n", suma);
