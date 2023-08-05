@@ -9,37 +9,28 @@
  */
 int main(int argc, char *argv[])
 {
-	int cntr;
-	int sy;
-	int co;
-	int sumt;
-	char *ar;
+	int cntr, var, rslt;
 
-	sum = 0;
-	co = 0;
-
-	cntr = 1;
-	while (cntr < argc)
+	rslt = 0;
+	if (argc > 1)
 	{
-		ar = argv[cntr];
-		sy = 0;
-		while (ar[sy] != '\0')
+		for (cntr = 1; cntr < argc; cntr++)
 		{
-			if (ar[sy] < '0' || ar[sy] > '9')
+			for (j = 0; argv[cntr][var] != '\0'; var++)
 			{
-				printf("Error\n");
-				return (1);
+				if (argv[cntr][var] >= '0' && argv[cntr][var] <= '9')
+				{
+					continue;
+				} else
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
-			sy++;
+			rslt += atoi(argv[cntr]);
 		}
-		cntr++;
-	}
-
-	for (cntr = 1; cntr < argc; cntr++)
-	{
-		co = atoi(argv[cntr]);
-		sumt = sumt + co;
-	}
-	printf("%d\n", sumt);
+		printf("%d\n", rslt);
+	} else
+		printf("0\n");
 	return (0);
 }
