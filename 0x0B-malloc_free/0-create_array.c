@@ -8,26 +8,31 @@
  *
  * Return: pointer to the array (Success), NULL (Error)
  */
+#include "main.h"
+
+/**
+ * *create_array - array create an array of chars,
+ * and initialize it with a specific character
+ * @size: size of the array
+ * @c: char to initialize array c
+ *
+ * Return: pointer to the array (Success), NULL (Error)
+ */
 char *create_array(unsigned int size, char c)
 {
-	char *ptr;
-	unsigned int contr = 0;
+	char *arry;
+	unsigned int contr;
 
 	if (size == 0)
 		return (NULL);
 
-	ptr = (char *) malloc(sizeof(char) * size);
-
-	if (ptr == NULL)
-		return (0);
-
-	while (contr < size)
+	arry = malloc(size * sizeof(char));
+	if (arry == NULL)
+		return (NULL);
+	for (contr = 0; contr < size; contr++)
 	{
-		*(ptr + contr) = c;
-		contr++;
+		arry[contr] = c;
 	}
 
-	*(ptr + contr) = '\0';
-
-	return (ptr);
+	return (arry);
 }
