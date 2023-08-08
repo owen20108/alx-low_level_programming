@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * *_strdup - return a pointer for a new string 
+ * *_strdup - return a pointer for a new string
  * @str: string to duplicate
  *
  * Return: pointer to new string (Success), NULL (Error)
