@@ -1,13 +1,4 @@
-#include "main.h"
-
-/**
- * *create_array - array create an array of chars,
- * and initialize it with a specific character
- * @size: size of the array
- * @c: char to initialize array c
- *
- * Return: pointer to the array (Success), NULL (Error)
- */
+#include <stdlib.h>
 #include "main.h"
 
 /**
