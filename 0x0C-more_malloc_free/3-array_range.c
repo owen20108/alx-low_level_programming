@@ -4,7 +4,7 @@
 /**
   * array_range - create  integer array
   * @min: min value to be stored
-  * @max: max value to be stored and 
+  * @max: max value to be stored and
   *
   * Return: pointer for array otherwise null
   */
