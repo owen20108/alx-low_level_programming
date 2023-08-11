@@ -22,7 +22,7 @@ int if_digit(char *s)
 }
 
 /**
- * _strlen - return  length of  string
+ * _strlnght - return  length of  string
  * @s: string will evaluate
  *
  * Return:length string
@@ -39,7 +39,7 @@ int _strlnght(char *s)
 }
 
 /**
- * errors - fix error for main
+ * errorz - fix error for main
  */
 void errorz(void)
 {
