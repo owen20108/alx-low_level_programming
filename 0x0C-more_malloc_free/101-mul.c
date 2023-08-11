@@ -60,11 +60,11 @@ int main(int argc, char *argv[])
 	int lngth1, lngth2, lngth, cuntr, getter, digits1, digits2, *rslt, z = 0;
 
 	strng1 = argv[1], strng2 = argv[2];
-	if (argc != 3 || !if_digits(strng1) || !if_digits(strng2))
+	if (argc != 3 || !if_digit(strng1) || !if_digit(strng2))
 		errors();
 	lngth1 = _strlnght(strng1);
 	lngth2 = _strlnght(strng2);
-	lngth = len1 + len2 + 1;
+	lngth = lngth1 + lngth2 + 1;
 	rslt = malloc(sizeof(int) * lngth);
 	if (!rslt)
 		return (1);
