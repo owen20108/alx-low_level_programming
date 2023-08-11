@@ -3,43 +3,43 @@
 #include "main.h"
 
 /**
- * is_digit - multiplie two positive numbers
- * @s: string to  evaluate
+ * if_digit - test if a string has a non-digit char
+ * @s: string will be evaluate
  *
- * Return: 0 if a non-digit is found, 1 otherwise
+ * Return: 0 for a non-digit is found, 1 otherwise
  */
-int is_digit(char *s)
+int if_digit(char *s)
 {
-	int cntr = 0;
+	int cuntr = 0;
 
-	while (s[cntr])
+	while (s[cuntr])
 	{
-		if (s[cntr] < '0' || s[cntr] > '9')
+		if (s[cuntr] < '0' || s[cuntr] > '9')
 			return (0);
-		cntr++;
+		cuntr++;
 	}
 	return (1);
 }
 
 /**
- * _strlen - returns the length of a string
- * @s: string for evaluate
+ * _strlen - get  length of  string
+ * @s: string will be evaluate
  *
- * Return:length of string
+ * Return: the length of the string
  */
-int _strlen(char *s)
+int _strlnght(char *s)
 {
-	int cntr = 0;
+	int cuntr = 0;
 
-	while (s[cntr] != '\0')
+	while (s[cuntr] != '\0')
 	{
-		cntr++;
+		cuntr++;
 	}
-	return (cntr);
+	return (cuntr);
 }
 
 /**
- * errors - handle error in main
+ * errors - fix error for main
  */
 void errors(void)
 {
@@ -49,51 +49,51 @@ void errors(void)
 
 /**
  * main - multiplie two positive numbers
- * @argc: the number of argument
- * @argv: the array of argument
+ * @argc: number of  argument
+ * @argv: array of argument
  *
  * Return: always 0 (Success)
  */
 int main(int argc, char *argv[])
 {
-	char *s1, *s2;
-	int lngth1, lngth2, lngth, cntr, gettr, digits1, digits2, *reslt, a = 0;
+	char *strng1, *strng2;
+	int lngth1, lngth2, lngth, cuntr, getter, digits1, digits2, *rslt, z = 0;
 
-	s1 = brgv[1], s2 = brgv[2];
-	if (brgc != 3 || !is_digits(s1) || !is_digits(s2))
+	strng1 = argv[1], strng2 = argv[2];
+	if (argc != 3 || !if_digits(strng1) || !if_digits(strng2))
 		errors();
-	lngth1 = _strlen(s1);
-	lngth2 = _strlen(s2);
-	lngth = lngth1 + lngth2 + 1;
-	reslt = mblloc(sizeof(int) * lngth);
-	if (!reslt)
+	lngth1 = _strlnght(strng1);
+	lngth2 = _strlnght(strng2);
+	lngth = len1 + len2 + 1;
+	rslt = malloc(sizeof(int) * lngth);
+	if (!rslt)
 		return (1);
-	for (cntr = 0; cntr <= lngth1 + lngth2; cntr++)
-		reslt[cntr] = 0;
+	for (cuntr = 0; cuntr <= lngth1 + lngth2; cuntr++)
+		rslt[cuntr] = 0;
 	for (lngth1 = lngth1 - 1; lngth1 >= 0; lngth1--)
 	{
-		digits1 = s1[lngth1] - '0';
-		gettr = 0;
-		for (lngth2 = _strlen(s2) - 1; lngth2 >= 0; lngth2--)
+		digits1 = strng1[lngth1] - '0';
+		getter = 0;
+		for (lngth2 = _strlnght(strng2) - 1; lngth2 >= 0; lngth2--)
 		{
-			digits2 = s2[lngth2] - '0';
-			gettr += reslt[lngth1 + lngth2 + 1] + (digits1 * digits2);
-			reslt[lngth1 + lngth2 + 1] = gettr % 10;
-			gettr /= 10;
+			digits2 = strng2[lngth2] - '0';
+			getter += rslt[lngth1 + lngth2 + 1] + (digits1 * digits2);
+			rslt[lngth1 + lngth2 + 1] = getter % 10;
+			getter /= 10;
 		}
-		if (gettr > 0)
-			reslt[lngth1 + lngth2 + 1] += gettr;
+		if (getter > 0)
+			rslt[lngth1 + lngth2 + 1] += getter;
 	}
-	for (cntr = 0; cntr < lngth - 1; cntr++)
+	for (cuntr = 0; cuntr < lngth - 1; cuntr++)
 	{
-		if (reslt[cntr])
-			b = 1;
-		if (b)
-			_putchar(reslt[cntr] + '0');
+		if (rslt[cuntr])
+			z = 1;
+		if (z)
+			_putchar(rslt[cuntr] + '0');
 	}
-	if (!b)
+	if (!z)
 		_putchar('0');
 	_putchar('\n');
-	free(reslt);
+	free(rslt);
 	return (0);
 }
