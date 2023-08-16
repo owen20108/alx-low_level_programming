@@ -21,10 +21,10 @@ int (*get_op_functions(char *strng))(int, int)
 	int itrtor;
 
 	itrtor = 0;
-	while (ops[itrtor].f != NULL)
+	while (ops[itrtor].fnction != NULL)
 	{
 		if (*strng == *(ops[itrtor].op) && strng[1] == '\0')
-			return (ops[itrtor].f);
+			return (ops[itrtor].fnction);
 		itrtor++;
 	}
 
