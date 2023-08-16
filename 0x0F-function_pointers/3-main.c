@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * main - main entry point 
+ * main - main entry point
  * @argc: arg count
  * @argv: pointers for argument
  * Return: Always 0.
