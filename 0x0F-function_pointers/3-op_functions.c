@@ -1,61 +1,62 @@
 #include "3-calc.h"
 
 /**
- * op_add - return sumtion for two numbers
- * @x: int parameter
- * @y: int parameter
+ * op_add - return sumation  two numbers
+ * @a: int parameter
+ * @b: int parameter
  *
  * Return: (@a + @b)
  */
-int op_add(int x, int y)
+int op_add(int a, int b)
 {
-	return (x + y);
+	return (a + b);
 }
 
 /**
  * op_sub - return subtract  two numbers
- * @x: int parameter
- * @y: int parameter
+ * @a: int parameter
+ * @b: int parameter
  *
- * Return: (@x - @y)
+ * Return: (@a - @b)
  */
-int op_sub(int x, int y)
+int op_sub(int a, int b)
 {
-	return (x - y);
+	return (a - b);
 }
 
 /**
- * op_mul - return multiply  two numbers
- * @x: int parameter
- * @y: int parameter
+ * op_mul - returns multiply numbers
+ * @a: int parameter
+ * @b: int parameter
  *
- * Return: (@x * @y)
+ * Return: (@a * @b)
  */
-int op_mul(int x, int y)
+int op_mul(int a, int b)
 {
-	return (x * y);
+	return (a * b);
 }
 
 /**
- * op_div - return division two numbers
- * @x: int parameter
- * @y: int parameter
+ * op_div - returns division two numbers
+ * @a: int parameter
+ * @b: int parameter
  *
- * Return: (@x / @y)
+ * Return: (@a / @b)
  */
-int op_div(int x, int y)
+int op_div(int a, int b)
 {
-	return (x / y);
+	return (a / b);
 }
 
 /**
  * op_mod - returns modulus two numbers
- * @x: int parameter
- * @y: int parameter
+ * @a: int parameter
+ * @b: int parameter
  *
- * Return: (@x % @y)
+ * Return: (@a % @b)
  */
-int op_mod(int x, int y)
+int op_mod(int a, int b)
 {
-	return (x % y);
+	return (a % b);
 }
+

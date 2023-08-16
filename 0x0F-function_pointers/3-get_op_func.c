@@ -3,12 +3,12 @@
 #include <stdio.h>
 
 /**
- * get_op_functions - choose the operations to use
- * @strng: string parameter
+ * get_op_func - choose operations 
+ * @s: string parameter
  *
- * Return: pointer for operation
+ * Return: pointer to operation
  */
-int (*get_op_functions(char *strng))(int, int)
+int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
 		{"+", op_add},
@@ -18,14 +18,14 @@ int (*get_op_functions(char *strng))(int, int)
 		{"%", op_mod},
 		{NULL, NULL}
 	};
-	int itrtor;
+	int i;
 
-	itrtor = 0;
-	while (ops[itrtor].fnction != NULL)
+	i = 0;
+	while (i < 5)
 	{
-		if (*strng == *(ops[itrtor].op) && strng[1] == '\0')
-			return (ops[itrtor].fnction);
-		itrtor++;
+		if (*s == ops[i].op[0])
+			return (ops[i].f);
+		i++;
 	}
 
 	printf("Error\n");
