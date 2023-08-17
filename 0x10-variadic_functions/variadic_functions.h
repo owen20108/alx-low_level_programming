@@ -1,5 +1,5 @@
-#ifndef VAR_FUNCH
-#define VAR_FUNCH
+#ifndef VAR_FUNCTION_H
+#define VAR_FUNCTION_H
 
 #include <stdio.h>
 #include <stdlib.h>
