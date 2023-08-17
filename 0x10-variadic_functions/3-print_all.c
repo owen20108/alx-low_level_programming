@@ -35,11 +35,11 @@ void print_all(const char * const format, ...)
 					printf("%s%s", seprtr, strng);
 					break;
 				default:
-					i++;
+					itr++;
 					continue;
 			}
 			seprtr = ", ";
-			i++;
+			itr++;
 		}
 	}
 
