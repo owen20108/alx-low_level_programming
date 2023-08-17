@@ -10,19 +10,33 @@
  */
 int main(int argc, char *argv[])
 {
-	int byte;
+	int bits, itrator;
+	char *arry;
 
-	if (argc < 2)
+	if (argc != 2)
 	{
 		printf("Error\n");
 		exit(1);
 	}
 
-	byte = atoi(argv[1]);
-	if (byte < 0)
+	bits = atoi(argv[1]);
+
+	if (bits < 0)
 	{
 		printf("Error\n");
 		exit(2);
+	}
+
+	arry = (char *)main;
+
+	for (itrator = 0; itrator < bits; itrator++)
+	{
+		if (itrator == bits - 1)
+		{
+			printf("%02hhx\n", arry[itrator]);
+			break;
+		}
+		printf("%02hhx ", arry[itrator]);
 	}
 	return (0);
 }
