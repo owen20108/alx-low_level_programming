@@ -21,9 +21,14 @@ size_t print_list(const list_t *h)
 			tmprry = tmprry->next;
 			rtrn++;
 		}
+		else
+		{
 		printf("[%u] %s\n", tmprry->len, tmprry->str);
 		tmprry = tmprry->next;
 		rtrn++;
+		    
+		}
+		
 	}
 	return (rtrn);
 }
