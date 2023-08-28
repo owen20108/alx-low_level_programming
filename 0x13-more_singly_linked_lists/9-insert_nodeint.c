@@ -2,7 +2,7 @@
 /**
  * insert_nodeint_at_index - inserts a node to speciefic index location
  * @head: pointer for head
- * @idx: location for index 
+ * @idx: location for index
  * @n: integer for  store the new index
  *
  * Return: pointer to new node otherwise NULL
