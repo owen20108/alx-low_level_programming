@@ -2,7 +2,7 @@
 
 /**
  * set_bit - set value for bit to 1 in  given index
- * @n: pointer for decimal 
+ * @n: pointer for decimal
  * @index: index location for change, begin at 0
  * Return: 1 if it success, -1 if error
  */
