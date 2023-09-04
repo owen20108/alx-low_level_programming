@@ -132,7 +132,7 @@ void print_version_elf(unsigned char *e_ident)
 }
 
 /**
- * print_osabi_elf_elf - Outputs the OS/ABI information from an ELF header.
+ * print_osabi_elf- Outputs the OS/ABI information from an ELF header.
  * @e_ident: pointer to an list of ELF magic numbers.
  */
 void print_osabi_elf(unsigned char *e_ident)
@@ -305,7 +305,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	print_version_elf(header->e_ident);
 	print_osabi_elf(header->e_ident);
 	print_abi_elf(header->e_ident);
-	print_type_elf(header->e_type, header->e_ident);
+	print_type_elf_elf(header->e_type, header->e_ident);
 	print_entry_elf(header->e_entry, header->e_ident);
 
 	free(header);
