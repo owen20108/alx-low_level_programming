@@ -4,35 +4,33 @@
 /**
  * read_textfile - Read the text file and print it in POSIX stdout.
  * @filename: pointer for name of file.
- * @letterds: The number of charcters of function to rw
+ * @letters: The number of charcters of function to rw
  *
  * Return: test function fail or filename is NULL - 0.
  * O/w - the real number of bytes for function can read and print.
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t opn, rd, wrt;
+	int fopn, frd, fwr;
 	char *bufr;
 
-	if (filename == NULL)
-		return (0);
-
 	bufr = malloc(sizeof(char) * letters);
-	if (bufr == NULL)
+	if (bufr == NULL || filename == NULL)
 		return (0);
 
-	opn = open(filename, O_RDONLY);
-	r = read(opn, bufr, letters);
-	wrt = write(STDOUT_FILENO, bufr, r);
-
-	if (opn == -1 || rd == -1 || wrt == -1 || wrt != rd)
-	{
-		free(bufr);
+	fopn = open(filename, O_RDONLY);
+	if (fopn == -1)
 		return (0);
-	}
 
+	frd = read(fopn, bufr, letters);
+	if (frd == -1)
+		return (0);
+
+	fwr = write(STDOUT_FILENO, bufr, frd);
+	if (fwr == -1)
+		return (0);
+
+	close(fopn);
 	free(bufr);
-	close(opn);
-
-	return (wrt);
+	return (fwr);
 }
