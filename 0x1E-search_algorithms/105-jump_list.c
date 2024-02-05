@@ -16,42 +16,42 @@
  */
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
-    size_t step, step_size;
-    listint_t *node, *jump;
+	size_t step, step_size;
+	listint_t *node, *jump;
 
-    /* Check if the list is NULL or empty */
-    if (list == NULL || size == 0)
-        return (NULL);
+	/* Check if the list is NULL or empty */
+	if (list == NULL || size == 0)
+		return (NULL);
 
-    /* Initialize variables for jump search */
-    step = 0;
-    step_size = sqrt(size);
+	/* Initialize variables for jump search */
+	step = 0;
+	step_size = sqrt(size);
 
-    /* Perform the jump search */
-    for (node = jump = list; jump->index + 1 < size && jump->n < value;)
-    {
-        /* Move forward in the list using the jump step */
-        node = jump;
-        for (step += step_size; jump->index < step; jump = jump->next)
-        {
-            if (jump->index + 1 == size)
-                break;
-        }
+	/* Perform the jump search */
+	for (node = jump = list; jump->index + 1 < size && jump->n < value;)
+	{
+		/* Move forward in the list using the jump step */
+		node = jump;
+		for (step += step_size; jump->index < step; jump = jump->next)
+		{
+			if (jump->index + 1 == size)
+				break;
+		}
 
-        /* Display the current checked node and value */
-        printf("Value checked at index [%ld] = [%d]\n", jump->index, jump->n);
-    }
+		/* Display the current checked node and value */
+		printf("Value checked at index [%ld] = [%d]\n", jump->index, jump->n);
+	}
 
-    /* Display the range where the value is found to be located */
-    printf("Value found between indexes [%ld] and [%ld]\n",
-           node->index, jump->index);
+	/* Display the range where the value is found to be located */
+	printf("Value found between indexes [%ld] and [%ld]\n",
+	       node->index, jump->index);
 
-    /* Perform a linear search within the identified range */
-    for (; node->index < jump->index && node->n < value; node = node->next)
-        printf("Value checked at index [%ld] = [%d]\n", node->index, node->n);
-    printf("Value checked at index [%ld] = [%d]\n", node->index, node->n);
+	/* Perform a linear search within the identified range */
+	for (; node->index < jump->index && node->n < value; node = node->next)
+		printf("Value checked at index [%ld] = [%d]\n", node->index, node->n);
+	printf("Value checked at index [%ld] = [%d]\n", node->index, node->n);
 
-    /* Return the node containing the value if found, otherwise, return NULL */
-    return (node->n == value ? node : NULL);
+	/* Return the node containing the value if found, otherwise, return NULL */
+	return (node->n == value ? node : NULL);
 }
 

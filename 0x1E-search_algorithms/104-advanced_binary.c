@@ -14,36 +14,36 @@
  */
 int binary_search_recursion(int *array, int value, size_t low, size_t high)
 {
-    size_t mid, i;
+	size_t mid, i;
 
-    /* Check if the array is NULL */
-    if (!array)
-        return (-1);
+	/* Check if the array is NULL */
+	if (!array)
+		return (-1);
 
-    /* Calculate the middle index of the current search range */
-    mid = (low + high) / 2;
+	/* Calculate the middle index of the current search range */
+	mid = (low + high) / 2;
 
-    /* Display the current search range */
-    printf("Searching in array: ");
-    for (i = low; i <= high; i++)
-        printf("%i%s", array[i], i == high ? "\n" : ", ");
+	/* Display the current search range */
+	printf("Searching in array: ");
+	for (i = low; i <= high; i++)
+		printf("%i%s", array[i], i == high ? "\n" : ", ");
 
-    /* Check if the value is found at the current low index */
-    if (array[low] == value)
-        return ((int)low);
+	/* Check if the value is found at the current low index */
+	if (array[low] == value)
+		return ((int)low);
 
-    /* Check if the current range is not a single element */
-    if (array[low] != array[high])
-    {
-        /* Adjust search range based on comparison with the target value */
-        if (array[mid] < value)
-            return (binary_search_recursion(array, value, mid + 1, high));
-        if (array[mid] >= value)
-            return (binary_search_recursion(array, value, low, mid));
-    }
+	/* Check if the current range is not a single element */
+	if (array[low] != array[high])
+	{
+		/* Adjust search range based on comparison with the target value */
+		if (array[mid] < value)
+			return (binary_search_recursion(array, value, mid + 1, high));
+		if (array[mid] >= value)
+			return (binary_search_recursion(array, value, low, mid));
+	}
 
-    /* Value not found in the array */
-    return (-1);
+	/* Value not found in the array */
+	return (-1);
 }
 
 /**
@@ -60,14 +60,13 @@ int binary_search_recursion(int *array, int value, size_t low, size_t high)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-    size_t low = 0;
-    size_t high = size - 1;
+	size_t low = 0;
+	size_t high = size - 1;
 
-    /* Check if the array is NULL */
-    if (!array)
-        return (-1);
+	/* Check if the array is NULL */
+	if (!array)
+		return (-1);
 
-    /* Call the recursive binary search helper function */
-    return (binary_search_recursion(array, value, low, high));
+	/* Call the recursive binary search helper function */
+	return (binary_search_recursion(array, value, low, high));
 }
-
