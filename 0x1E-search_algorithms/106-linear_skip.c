@@ -3,7 +3,7 @@
 /**
  * linear_skip - Searches for a value contained in a skip list.
  * Assumes a list with sorted values and a single skip layer with nodes
- * at every index which is a multiple of the square root of the size of the list.
+ * at every index which is a multiple of the square root line size
  *
  * @list: Pointer to the head of the skip list to traverse.
  * @value: Value to search for.
