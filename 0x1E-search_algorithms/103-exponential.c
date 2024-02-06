@@ -10,7 +10,7 @@
  */
 size_t min(size_t a, size_t b)
 {
-    return (a <= b ? a : b);
+	return (a <= b ? a : b);
 }
 
 /**
@@ -28,33 +28,33 @@ size_t min(size_t a, size_t b)
  */
 int binary_search_helper(int *array, int value, size_t low, size_t high)
 {
-    size_t mid, i;
+	size_t mid, i;
 
-    /* Check if the array is NULL */
-    if (!array)
-        return (-1);
+	/* Check if the array is NULL */
+	if (!array)
+		return (-1);
 
-    /* Perform the binary search */
-    while (low <= high)
-    {
-        mid = (low + high) / 2;
+	/* Perform the binary search */
+	while (low <= high)
+	{
+		mid = (low + high) / 2;
 
-        /* Display the current search range */
-        printf("Searching in array: ");
-        for (i = low; i <= high; i++)
-            printf("%i%s", array[i], i == high ? "\n" : ", ");
+		/* Display the current search range */
+		printf("Searching in array: ");
+		for (i = low; i <= high; i++)
+			printf("%i%s", array[i], i == high ? "\n" : ", ");
 
-        /* Adjust search range based on comparison with the target value */
-        if (array[mid] < value)
-            low = mid + 1;
-        else if (array[mid] > value)
-            high = mid - 1;
-        else
-            return ((int)mid); /* Value found, return the index */
-    }
+		/* Adjust search range based on comparison with the target value */
+		if (array[mid] < value)
+			low = mid + 1;
+		else if (array[mid] > value)
+			high = mid - 1;
+		else
+			return ((int)mid); /* Value found, return the index */
+	}
 
-    /* Value not found in the array */
-    return (-1);
+	/* Value not found in the array */
+	return (-1);
 }
 
 /**
@@ -70,31 +70,31 @@ int binary_search_helper(int *array, int value, size_t low, size_t high)
  */
 int exponential_search(int *array, size_t size, int value)
 {
-    size_t low, high, bound = 1;
+	size_t low, high, bound = 1;
 
-    /* Check if the array is NULL or empty */
-    if (!array || size == 0)
-        return (-1);
+	/* Check if the array is NULL or empty */
+	if (!array || size == 0)
+		return (-1);
 
-    /* Find the range in which the value may be present using exponential growth */
-    while (bound < size && array[bound] < value)
-    {
-        /* Display the current checked position and value */
-        printf("Value checked array[%lu] = [%d]\n",
-               bound, array[bound]);
+	/* Find the range in which the value may be present using exponential growth */
+	while (bound < size && array[bound] < value)
+	{
+		/* Display the current checked position and value */
+		printf("Value checked array[%lu] = [%d]\n",
+		       bound, array[bound]);
 
-        /* Increase the bound using exponential growth */
-        bound *= 2;
-    }
+		/* Increase the bound using exponential growth */
+		bound *= 2;
+	}
 
-    /* Determine the actual range for binary search */
-    low = bound / 2;
-    high = min(bound, size - 1);
+	/* Determine the actual range for binary search */
+	low = bound / 2;
+	high = min(bound, size - 1);
 
-    /* Display the range where the value is found to be located */
-    printf("Value found between indexes [%lu] and [%lu]\n", low, high);
+	/* Display the range where the value is found to be located */
+	printf("Value found between indexes [%lu] and [%lu]\n", low, high);
 
-    /* Perform binary search within the identified range */
-    return binary_search_helper(array, value, low, high);
+	/* Perform binary search within the identified range */
+	return binary_search_helper(array, value, low, high);
 }
 
