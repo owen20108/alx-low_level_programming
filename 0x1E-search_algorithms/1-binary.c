@@ -15,39 +15,39 @@
 
 int binary_search(int *array, size_t size, int value)
 {
-    int low, mid, high;
-    int x;
+	int low, mid, high;
+	int x;
 
-    /* Check if the array is NULL */
-    if (array == NULL)
-    {
-        return (-1);
-    }
+	/* Check if the array is NULL */
+	if (array == NULL)
+	{
+		return (-1);
+	}
 
-    /* Initialize low and high for binary search */
-    low = 0;
-    high = size - 1;
+	/* Initialize low and high for binary search */
+	low = 0;
+	high = size - 1;
 
-    /* Binary search algorithm */
-    while (low <= high)
-    {
-        mid = (low + high) / 2;
+	/* Binary search algorithm */
+	while (low <= high)
+	{
+		mid = (low + high) / 2;
 
-        /* Display the current search range */
-        printf("Searching in array: ");
-        for (x = low; x <= high; x++)
-            printf("%i%s", array[x], x == high ? "\n" : ", ");
+		/* Display the current search range */
+		printf("Searching in array: ");
+		for (x = low; x <= high; x++)
+			printf("%i%s", array[x], x == high ? "\n" : ", ");
 
-        /* Adjust search range based on comparison with the target value */
-        if (array[mid] < value)
-            low = mid + 1;
-        else if (array[mid] > value)
-            high = mid - 1;
-        else
-            return (mid); /* Value found, return the index */
-    }
+		/* Adjust search range based on comparison with the target value */
+		if (array[mid] < value)
+			low = mid + 1;
+		else if (array[mid] > value)
+			high = mid - 1;
+		else
+			return (mid); /* Value found, return the index */
+	}
 
-    /* Value not found in the array */
-    return (-1);
+	/* Value not found in the array */
+	return (-1);
 }
 
