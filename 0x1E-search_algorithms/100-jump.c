@@ -13,7 +13,7 @@
  */
 size_t min(size_t a, size_t b)
 {
-    return (a <= b ? a : b);
+	return (a <= b ? a : b);
 }
 
 /**
@@ -29,37 +29,37 @@ size_t min(size_t a, size_t b)
  */
 int jump_search(int *array, size_t size, int value)
 {
-    size_t low, high, jump;
+	size_t low, high, jump;
 
-    /* Check if the array is NULL or empty */
-    if (!array || size == 0)
-        return (-1);
+	/* Check if the array is NULL or empty */
+	if (!array || size == 0)
+		return (-1);
 
-    /* Set the jump size for the jump search */
-    jump = sqrt(size);
+	/* Set the jump size for the jump search */
+	jump = sqrt(size);
 
-    /* Perform the jump search */
-    for (high = 0; high < size && array[high] < value;
-         low = high, high += jump)
-    {
-        printf("Value checked array[%lu] = [%d]\n",
-               high, array[high]);
-    }
+	/* Perform the jump search */
+	for (high = 0; high < size && array[high] < value;
+	     low = high, high += jump)
+	{
+		printf("Value checked array[%lu] = [%d]\n",
+		       high, array[high]);
+	}
 
-    /* Display the range where the value is found to be located */
-    printf("Value found between indexes [%lu] and [%lu]\n", low, high);
+	/* Display the range where the value is found to be located */
+	printf("Value found between indexes [%lu] and [%lu]\n", low, high);
 
-    /* Perform a linear search within the identified range */
-    for (; low <= min(high, size - 1); low++)
-    {
-        printf("Value checked array[%lu] = [%d]\n", low, array[low]);
+	/* Perform a linear search within the identified range */
+	for (; low <= min(high, size - 1); low++)
+	{
+		printf("Value checked array[%lu] = [%d]\n", low, array[low]);
 
-        /* Check if the current element is equal to the target value */
-        if (array[low] == value)
-            return (low); /* Value found, return the index */
-    }
+		/* Check if the current element is equal to the target value */
+		if (array[low] == value)
+			return (low); /* Value found, return the index */
+	}
 
-    /* Value not found in the array */
-    return (-1);
+	/* Value not found in the array */
+	return (-1);
 }
 
